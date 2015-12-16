@@ -1,7 +1,9 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
-asdf
+<% if session[:visit_count] > 5 %>
+Your visit count : <%= session[:visit_count] %>
+<% end %>
 <h1>Your Pragmatic Catalog</h1>
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
